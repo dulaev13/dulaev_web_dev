@@ -21,9 +21,14 @@
               "src/favicon.ico"
             ],
             "styles": [
+              "src/assets/css/animate.css",
+              "src/assets/css/styles.css",
               "src/assets/styles/app.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/core.js",
+              "src/assets/js/plugins.js"
+            ]
           },
           "configurations": {
             "production": {

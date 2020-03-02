@@ -16,6 +16,8 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-web-layout',
   templateUrl: './web-layout.template.html',
+  styleUrls: ['./web-layout.component.scss']
+
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WebLayoutComponent implements OnInit, AfterViewInit {
@@ -35,6 +37,10 @@ export class WebLayoutComponent implements OnInit, AfterViewInit {
     private layout: LayoutService,
     private cdr: ChangeDetectorRef
   ) {
+
+
+
+    
     // Close sidenav after route change in mobile
     this.routerEventSub = router.events.pipe(filter(event => event instanceof NavigationEnd))
     .subscribe((routeChange: NavigationEnd) => {
@@ -71,8 +77,11 @@ export class WebLayoutComponent implements OnInit, AfterViewInit {
     this.layout.adjustLayout(event);
   }
   
-  ngAfterViewInit() {
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
 
+  ngAfterViewInit() {
   }
   
   scrollToTop() {
@@ -80,14 +89,17 @@ export class WebLayoutComponent implements OnInit, AfterViewInit {
       setTimeout(() => {
         let element;
         if(this.layoutConf.topbarFixed) {
-          element = <HTMLElement>document.querySelector('#rightside-content-hold');
+          element = <HTMLElement>document.querySelector('#home');
         } else {
-          element = <HTMLElement>document.querySelector('#main-content-wrap');
+          element = <HTMLElement>document.querySelector('#home');
         }
         element.scrollTop = 0;
+        
       })
     }
   }
+
+  
   ngOnDestroy() {
     if(this.moduleLoaderSub) {
       this.moduleLoaderSub.unsubscribe();
@@ -134,5 +146,11 @@ export class WebLayoutComponent implements OnInit, AfterViewInit {
       'fixed-topbar': layoutConf.topbarFixed && layoutConf.navigationPos === 'side'
     }
   }
+
+  scrollTo(className: string):void {
+    const elementList = document.querySelectorAll('.' + className);
+    const element = elementList[0] as HTMLElement;
+    element.scrollIntoView({ behavior: 'smooth' });
+ }
   
 }

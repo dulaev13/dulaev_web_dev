@@ -14,7 +14,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  appTitle = 'Egret';
+  appTitle = 'Amur Dulaev';
   pageTitle = '';
 
   constructor(
@@ -46,5 +46,10 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.title.setTitle(this.pageTitle);
     });
   }
+
+
+
+
+  
   
 }

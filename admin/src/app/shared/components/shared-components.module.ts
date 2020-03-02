@@ -1,3 +1,5 @@
+import { HomeComponent } from './home-component/home.component';
+import { AHeaderTopComponent } from './a-header-top/a-header-top.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedMaterialModule } from '../shared-material.module';
@@ -38,7 +40,49 @@ import { EgretExampleViewerComponent } from './example-viewer/example-viewer.com
 import { EgretExampleViewerTemplateComponent } from './example-viewer-template/example-viewer-template.component';
 import { InputComponent } from './form-components/input-component/input.component';
 import { TextareaComponent } from './form-components/textarea-component/textarea.component';
+
+//--------------------------------------------------------------------
+import { BlogPostComponent } from './blog-post-component/blog-post.component';
+import { BlogComponent } from './blog-component/blog.component';
+
+import { APanelComponent } from './a-panel/a-panel.component';
+import { ASigninSectionComponent } from '../../views/others/a-signin-section/a-signin-section.component';
+import { AContactSectionComponent } from '../../views/others/a-contact-section/a-contact-section.component';
+import { APostsSectionComponent } from '../../views/others/a-posts-section/a-posts-section.component';
+import { AReferencesSectionComponent } from '../../views/others/a-references-section/a-references-section.component';
+import { AExperienceSectionComponent } from '../../views/others/a-experience-section/a-experience-section.component';
+import { AWorksSectionComponent } from '../../views/others/a-works-section/a-works-section.component';
+import { AServicesSectionComponent } from '../../views/others/a-services-section/a-services-section.component';
+import { ASkillsSectionComponent } from '../../views/others/a-skills-section/a-skills-section.component';
+import { AAboutSectionComponent } from '../../views/others/a-about-section/a-about-section.component';
+import { AHomeSectionComponent } from '../../views/others/a-home-section/a-home-section.component';
+import { AFooterComponent } from './a-footer/a-footer.component';
+import { AHeaderComponent } from './a-header/a-header.component';
+
+
 const components = [
+
+  AHeaderComponent,
+  AFooterComponent,
+  APanelComponent,
+  AHomeSectionComponent,
+  AAboutSectionComponent,
+  ASkillsSectionComponent,
+  AServicesSectionComponent,
+  AWorksSectionComponent,
+  AExperienceSectionComponent,
+  AReferencesSectionComponent,
+  APostsSectionComponent,
+  AContactSectionComponent,
+  ASigninSectionComponent,
+  AHeaderTopComponent,
+  HomeComponent,
+  BlogComponent,
+  BlogPostComponent,
+
+
+  //--------------------------------
+
   HeaderTopComponent,
   SidebarTopComponent,
   SidenavComponent,

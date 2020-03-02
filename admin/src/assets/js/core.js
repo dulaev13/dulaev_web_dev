@@ -1,15 +1,12 @@
 /* -----------------------------------------------------------------------------
 
-I'm Mat - Material Personal Resume vCard Template
-
-File:           Base SCSS File
-Version:        1.2
-Last change:    08/06/16 
-Author:         Suelo 
+Personal Resume vCard 
 
 -------------------------------------------------------------------------------- */
 
 "use strict";
+
+
 
 var $body = $('body');
 
@@ -19,13 +16,23 @@ var $header = $('#header'),
 
 var setHeader = function() {
     scrolled = $(window).scrollTop();
-
+ 
     if(scrolled >= topBarHeight) {
         $body.addClass('sticky-layout');
-    } else {
-        $body.removeClass('sticky-layout');
-    }
+        
+    } if (scrolled <= topBarHeight) {
+        $body.removeClass('sticky-layout').scss({'-webkit-transition' : 500})
+
+};
+        
 }
+
+
+
+
+
+
+
 
 var Mat = {
     init: function() {

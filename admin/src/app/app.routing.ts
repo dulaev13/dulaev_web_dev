@@ -1,3 +1,5 @@
+import { BlogComponent } from './shared/components/blog-component/blog.component';
+import { HomeComponent } from './shared/components/home-component/home.component';
 import { Routes } from '@angular/router';
 import { AdminLayoutComponent } from './shared/components/layouts/admin-layout/admin-layout.component';
 import { WebLayoutComponent } from './shared/components/layouts/web-layout/web-layout.component';
@@ -5,11 +7,26 @@ import { AuthLayoutComponent } from './shared/components/layouts/auth-layout/aut
 import { AuthGuard } from './shared/services/auth/auth.guard';
 
 export const rootRouterConfig: Routes = [
-  { 
+/*  { 
     path: '', 
     redirectTo: 'sessions',  
     pathMatch: 'full' 
-  }, 
+  },
+*/   
+{
+  path: '', 
+  component: WebLayoutComponent,
+  children: [
+    { 
+      path: '', component: HomeComponent, pathMatch: 'full',
+    }, 
+    { 
+      path: 'blog', component: BlogComponent, pathMatch: 'full',
+      data: { title: 'Blog'} 
+    }
+  ]
+},
+
   {
     path: '', 
     component: AuthLayoutComponent,

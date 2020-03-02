@@ -16,7 +16,7 @@ import { AuthorizationComponent } from './autorization/autorization.component';
 export const SessionsRoutes: Routes = [
   { 
     path: '', 
-    redirectTo: 'autorization', 
+    redirectTo: 'registration', 
     pathMatch: 'full' 
   },
   {
